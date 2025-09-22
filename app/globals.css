@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-red: #E23C2A;         /* Salsa Red */
+  --color-red-dark: #8A1C16;    /* Dark Chili */
+  --color-green: #2E7D32;       /* Tomatillo Green */
+  --color-cream: #FFF5E9;       /* Warm Cream */
+  --color-charcoal: #111111;    /* Charcoal */
+}
+
+html, body {
+  height: 100%;
+  background: var(--color-cream);
+  color: var(--color-charcoal);
+}
+
+a {
+  @apply underline underline-offset-2 decoration-red;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-md bg-red px-4 py-3 text-white font-medium shadow-soft transition-colors hover:bg-red-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-dark;
+}
+
+.pill {
+  @apply inline-flex items-center justify-center rounded-full border px-4 py-2 text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
+
+.pill-selected {
+  @apply bg-green text-white border-green;
+}
+
+.pill-unselected {
+  @apply bg-white border-gray-300 text-charcoal hover:border-green;
+}
+
+/* Sticky summary for mobile */
+.summary-sticky {
+  @apply fixed bottom-0 left-0 right-0 z-40 md:static md:z-auto;
+}
+
+

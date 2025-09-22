@@ -1,0 +1,300 @@
+import type {
+  ChiliKey,
+  IngredientKey,
+  PreparationKey,
+  SweetenerKey,
+  PackagingKey
+} from "./types";
+
+export type Locale = "es" | "en";
+
+type Dict = {
+  home: {
+    title: string;
+    tagline: string;
+    subnote: string;
+    noMinimum: string;
+  };
+  steps: {
+    step: string;
+    chili: string;
+    heat: string;
+    ingredients: string;
+    preparation: string;
+    sweetener: string;
+    packaging: string;
+    quantityContact: string;
+  };
+  form: {
+    quantity: string;
+    name: string;
+    phone: string;
+    errors: {
+      quantity: string;
+      name: string;
+    };
+  };
+  actions: {
+    submit: string;
+    openWhatsapp: string;
+    reset: string;
+  };
+  common: {
+    na: string;
+  };
+  heatLabels: Record<0 | 10, string>;
+  options: {
+    chili: Record<ChiliKey, string>;
+    ingredients: Record<IngredientKey, string>;
+    preparation: Record<PreparationKey, string>;
+    sweetener: Record<SweetenerKey, string>;
+    packaging: Record<PackagingKey, string>;
+  };
+  summary: {
+    title: string;
+    chili: string;
+    heat: string;
+    ingredients: string;
+    preparation: string;
+    sweetener: string;
+    packaging: string;
+    quantity: string;
+  };
+  wa: {
+    hello: string;
+    bullets: {
+      chili: string;
+      heat: string;
+      ingredients: string;
+      preparation: string;
+      sweetener: string;
+      packaging: string;
+      quantity: string;
+      name: string;
+      instagram: string;
+    };
+  };
+};
+
+export const dictionaries: Record<Locale, Dict> = {
+  es: {
+    home: {
+      title: "Arma tu cotización",
+      tagline:
+        "Te ayudamos a producir tu línea de salsas con los mejores ingredientes al mejor precio.",
+      subnote: "Sin mínimo de pedido. Respuesta en 24 h.",
+      noMinimum: "Sin mínimo de pedido / No minimum order"
+    },
+    steps: {
+      step: "Paso",
+      chili: "Selecciona el tipo de chile",
+      heat: "Ajusta el picor",
+      ingredients: "Selecciona los ingredientes",
+      preparation: "Selecciona el preparado",
+      sweetener: "Selecciona el endulzante",
+      packaging: "Selecciona el envase",
+      quantityContact: "Cantidad y contacto"
+    },
+    form: {
+      quantity: "Cantidad (unidades)",
+      name: "Nombre (requerido)",
+      phone: "Teléfono (opcional)",
+      errors: {
+        quantity: "Ingresa una cantidad válida mayor a 0",
+        name: "Ingresa tu nombre"
+      }
+    },
+    actions: {
+      submit: "Enviar por WhatsApp",
+      openWhatsapp: "Abrir WhatsApp",
+      reset: "Reiniciar"
+    },
+    common: { na: "N/A" },
+    heatLabels: { 0: "Suave", 10: "Extremo" },
+    options: {
+      chili: {
+        jalapeno: "Jalapeño",
+        serrano: "Serrano",
+        habanero: "Habanero",
+        poblano: "Poblano",
+        manzano: "Manzano"
+      },
+      ingredients: {
+        onion: "Cebolla",
+        tomato: "Tomate",
+        garlic: "Ajo",
+        cilantro: "Cilantro",
+        spices: "Especias"
+      },
+      preparation: {
+        marinated: "Marinado",
+        charred: "Tatemado",
+        cooked: "Cocido",
+        fresh: "Crudo"
+      },
+      sweetener: {
+        none: "Ninguno",
+        sugar: "Azúcar",
+        agave: "Agave",
+        piloncillo: "Piloncillo"
+      },
+      packaging: {
+        "250g_glass": "250 g (vidrio)",
+        "330g_glass": "330 g (vidrio)",
+        "1l_glass": "1 L (vidrio)",
+        "1_5kg_bucket": "1.5 kg (cubeta)",
+        "5kg_bucket": "5 kg (cubeta)",
+        "20kg_drum": "20 kg (tambor)"
+      }
+    },
+    summary: {
+      title: "Resumen",
+      chili: "Chile",
+      heat: "Picor",
+      ingredients: "Ingredientes",
+      preparation: "Preparación",
+      sweetener: "Endulzante",
+      packaging: "Envase",
+      quantity: "Cantidad"
+    },
+    wa: {
+      hello: "Hola Grupo Arrabiato, quiero una cotización:",
+      bullets: {
+        chili: "• Chile",
+        heat: "• Picor",
+        ingredients: "• Ingredientes",
+        preparation: "• Preparación",
+        sweetener: "• Endulzante",
+        packaging: "• Envase",
+        quantity: "• Cantidad",
+        name: "• Nombre",
+        instagram: "• Instagram"
+      }
+    }
+  },
+  en: {
+    home: {
+      title: "Build your quote",
+      tagline:
+        "We help you produce your private‑label salsas with top ingredients at the best price.",
+      subnote: "No minimum order. Reply within 24 h.",
+      noMinimum: "No minimum order / Sin mínimo de pedido"
+    },
+    steps: {
+      step: "Step",
+      chili: "Choose chili type",
+      heat: "Adjust heat",
+      ingredients: "Choose ingredients",
+      preparation: "Choose preparation",
+      sweetener: "Choose sweetener",
+      packaging: "Choose packaging",
+      quantityContact: "Quantity and contact"
+    },
+    form: {
+      quantity: "Quantity (units)",
+      name: "Name (required)",
+      phone: "Phone (optional)",
+      errors: {
+        quantity: "Enter a valid quantity greater than 0",
+        name: "Enter your name"
+      }
+    },
+    actions: {
+      submit: "Send via WhatsApp",
+      openWhatsapp: "Open WhatsApp",
+      reset: "Reset"
+    },
+    common: { na: "N/A" },
+    heatLabels: { 0: "Mild", 10: "Extra hot" },
+    options: {
+      chili: {
+        jalapeno: "Jalapeño",
+        serrano: "Serrano",
+        habanero: "Habanero",
+        poblano: "Poblano",
+        manzano: "Manzano"
+      },
+      ingredients: {
+        onion: "Onion",
+        tomato: "Tomato",
+        garlic: "Garlic",
+        cilantro: "Cilantro",
+        spices: "Spices"
+      },
+      preparation: {
+        marinated: "Marinated",
+        charred: "Charred",
+        cooked: "Cooked",
+        fresh: "Fresh"
+      },
+      sweetener: {
+        none: "None",
+        sugar: "Sugar",
+        agave: "Agave",
+        piloncillo: "Piloncillo"
+      },
+      packaging: {
+        "250g_glass": "250 g (glass)",
+        "330g_glass": "330 g (glass)",
+        "1l_glass": "1 L (glass)",
+        "1_5kg_bucket": "1.5 kg (bucket)",
+        "5kg_bucket": "5 kg (bucket)",
+        "20kg_drum": "20 kg (drum)"
+      }
+    },
+    summary: {
+      title: "Summary",
+      chili: "Chili",
+      heat: "Heat",
+      ingredients: "Ingredients",
+      preparation: "Preparation",
+      sweetener: "Sweetener",
+      packaging: "Packaging",
+      quantity: "Quantity"
+    },
+    wa: {
+      hello: "Hi Grupo Arrabiato, I’d like a quote:",
+      bullets: {
+        chili: "• Chili",
+        heat: "• Heat",
+        ingredients: "• Ingredients",
+        preparation: "• Preparation",
+        sweetener: "• Sweetener",
+        packaging: "• Packaging",
+        quantity: "• Quantity",
+        name: "• Name",
+        instagram: "• Instagram"
+      }
+    }
+  }
+};
+
+export const OptionKeyGroups = {
+  chili: ["jalapeno", "serrano", "habanero", "poblano", "manzano"] as ChiliKey[],
+  ingredients: ["onion", "tomato", "garlic", "cilantro", "spices"] as IngredientKey[],
+  preparation: ["marinated", "charred", "cooked", "fresh"] as PreparationKey[],
+  sweetener: ["none", "sugar", "agave", "piloncillo"] as SweetenerKey[],
+  packaging: [
+    "250g_glass",
+    "330g_glass",
+    "1l_glass",
+    "1_5kg_bucket",
+    "5kg_bucket",
+    "20kg_drum"
+  ] as PackagingKey[]
+};
+
+export function getDict(locale: Locale) {
+  return dictionaries[locale];
+}
+
+export function labelFor<T extends keyof Dict["options"]>(
+  locale: Locale,
+  group: T,
+  key: keyof Dict["options"][T]
+): string {
+  const table = dictionaries[locale].options[group] as Record<string, string>;
+  return table[key as string];
+}
+
+
