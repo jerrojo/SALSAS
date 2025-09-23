@@ -34,15 +34,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es" className={`${inter.variable} ${playfair.variable}`}>
       <body className="min-h-screen flex flex-col">
-        <header className="mx-auto w-full max-w-4xl px-4 py-6">
+        <header className="mx-auto w-full max-w-4xl px-4 py-6 border-b border-black/5">
           <div className="flex items-center justify-start">
             <img src="/logo.png" alt="Grupo Arrabiato" className="h-10 md:h-12 w-auto" />
           </div>
         </header>
         <main className="flex-1 mx-auto w-full max-w-4xl px-4 pb-28 md:pb-8">{children}</main>
         <footer className="border-t bg-white/70 backdrop-blur">
-          <div className="mx-auto flex w-full max-w-4xl flex-col items-start gap-2 px-4 py-6 text-sm md:flex-row md:items-center md:justify-between">
-            <div className="flex items-center gap-4">
+          <div className="mx-auto flex w-full max-w-4xl flex-col items-start gap-3 px-4 py-6 text-sm md:flex-row md:items-center md:justify-between">
+            <div className="flex items-center gap-3">
               <a
                 href="https://wa.me/525538994836"
                 target="_blank"
@@ -52,7 +52,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               >
                 WhatsApp
               </a>
-              <span className="text-gray-700">@salsasarrabiata</span>
+              <a
+                href="https://instagram.com/grupoarrabiato"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-700 hover:text-red font-medium"
+              >
+                @grupoarrabiato
+              </a>
             </div>
             <div className="text-gray-600">Hecho en México</div>
           </div>
