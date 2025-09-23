@@ -15,11 +15,10 @@ export function buildMessage(order: Order, locale: Locale): string {
     `${dict.wa.bullets.heat}: ${order.heat}/10`,
     `${dict.wa.bullets.ingredients}: ${ing}`,
     `${dict.wa.bullets.preparation}: ${labelFor(locale, "preparation", order.preparation)}`,
-    `${dict.wa.bullets.sweetener}: ${labelFor(locale, "sweetener", order.sweetener)}`,
     `${dict.wa.bullets.packaging}: ${labelFor(locale, "packaging", order.packaging)}`,
     `${dict.wa.bullets.quantity}: ${order.quantity} ${locale === "es" ? "unidades" : "units"}`,
     `${dict.wa.bullets.name}: ${order.name}`,
-    `${dict.wa.bullets.instagram}: @salsasarrabiata`
+    `${dict.wa.bullets.instagram}: @grupoarrabiato`
   ];
   return lines.join("\n");
 }

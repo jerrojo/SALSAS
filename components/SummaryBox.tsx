@@ -51,9 +51,7 @@ export default function SummaryBox({ order, locale, onReset }: Props) {
           <li>
             <strong>{dict.summary.preparation}:</strong> {labelFor(locale, "preparation", order.preparation)}
           </li>
-          <li>
-            <strong>{dict.summary.sweetener}:</strong> {labelFor(locale, "sweetener", order.sweetener)}
-          </li>
+          
           <li className="md:col-span-2">
             <strong>{dict.summary.packaging}:</strong> {labelFor(locale, "packaging", order.packaging)}
           </li>

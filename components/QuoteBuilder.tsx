@@ -19,11 +19,10 @@ const orderSchema = z.object({
   heat: z.number().min(0).max(10),
   ingredients: z.array(z.enum(["onion", "tomato", "garlic", "cilantro", "spices"])).optional(),
   preparation: z.enum(["marinated", "charred", "cooked", "fresh"]),
-  sweetener: z.enum(["none", "sugar", "agave", "piloncillo"]),
-  packaging: z.enum(["250g_glass", "330g_glass", "1l_glass", "1_5kg_bucket", "5kg_bucket", "20kg_drum"]),
+  packaging: z.enum(["250g_plastic", "250g_glass", "450g_glass", "1_5kg_bag", "3kg_bag", "17kg_bucket", "200kg_drum"]),
   quantity: z.number().int().positive(),
   name: z.string().min(1),
-  phone: z.string().optional()
+  // phone removed
 });
 
 type FormValues = z.infer<typeof orderSchema>;
@@ -43,11 +42,9 @@ export default function QuoteBuilder({ locale }: { locale: Locale }) {
       heat: 5,
       ingredients: [],
       preparation: "marinated",
-      sweetener: "none",
-      packaging: "250g_glass",
+      packaging: "250g_plastic",
       quantity: 1,
-      name: "",
-      phone: ""
+      name: ""
     };
   }, []);
 
@@ -184,27 +181,7 @@ export default function QuoteBuilder({ locale }: { locale: Locale }) {
             />
           ))}
 
-          {section(`${dict.steps.step} 5 — ${dict.steps.sweetener}`, (
-            <Controller
-              control={control}
-              name="sweetener"
-              render={({ field }) => (
-                <div className="flex flex-wrap gap-2">
-                  {OptionKeyGroups.sweetener.map((key) => (
-                    <StepPill
-                      key={key}
-                      label={labelFor(locale, "sweetener", key)}
-                      selected={field.value === key}
-                      onClick={() => field.onChange(key)}
-                      aria-label={labelFor(locale, "sweetener", key)}
-                    />
-                  ))}
-                </div>
-              )}
-            />
-          ))}
-
-          {section(`${dict.steps.step} 6 — ${dict.steps.packaging}`, (
+          {section(`${dict.steps.step} 5 — ${dict.steps.packaging}`, (
             <Controller
               control={control}
               name="packaging"
@@ -224,7 +201,7 @@ export default function QuoteBuilder({ locale }: { locale: Locale }) {
             />
           ))}
 
-          {section(`${dict.steps.step} 7 — ${dict.steps.quantityContact}`, (
+          {section(`${dict.steps.step} 6 — ${dict.steps.quantityContact}`, (
             <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
               <Controller
                 control={control}
@@ -259,20 +236,6 @@ export default function QuoteBuilder({ locale }: { locale: Locale }) {
                     {errors.name && (
                       <p className="mt-1 text-sm text-red-dark">{dict.form.errors.name}</p>
                     )}
-                  </div>
-                )}
-              />
-              <Controller
-                control={control}
-                name="phone"
-                render={({ field }) => (
-                  <div className="md:col-span-2">
-                    <label className="block text-sm font-medium">{dict.form.phone}</label>
-                    <input
-                      type="tel"
-                      className="mt-1 w-full rounded-md border border-gray-300 bg-white px-3 py-2"
-                      {...field}
-                    />
                   </div>
                 )}
               />

@@ -2,7 +2,6 @@ import type {
   ChiliKey,
   IngredientKey,
   PreparationKey,
-  SweetenerKey,
   PackagingKey
 } from "./types";
 
@@ -21,14 +20,12 @@ type Dict = {
     heat: string;
     ingredients: string;
     preparation: string;
-    sweetener: string;
     packaging: string;
     quantityContact: string;
   };
   form: {
     quantity: string;
     name: string;
-    phone: string;
     errors: {
       quantity: string;
       name: string;
@@ -47,7 +44,6 @@ type Dict = {
     chili: Record<ChiliKey, string>;
     ingredients: Record<IngredientKey, string>;
     preparation: Record<PreparationKey, string>;
-    sweetener: Record<SweetenerKey, string>;
     packaging: Record<PackagingKey, string>;
   };
   summary: {
@@ -56,7 +52,6 @@ type Dict = {
     heat: string;
     ingredients: string;
     preparation: string;
-    sweetener: string;
     packaging: string;
     quantity: string;
   };
@@ -67,7 +62,6 @@ type Dict = {
       heat: string;
       ingredients: string;
       preparation: string;
-      sweetener: string;
       packaging: string;
       quantity: string;
       name: string;
@@ -91,14 +85,12 @@ export const dictionaries: Record<Locale, Dict> = {
       heat: "Ajusta el picor",
       ingredients: "Selecciona los ingredientes",
       preparation: "Selecciona el preparado",
-      sweetener: "Selecciona el endulzante",
       packaging: "Selecciona el envase",
       quantityContact: "Cantidad y contacto"
     },
     form: {
       quantity: "Cantidad (unidades)",
       name: "Nombre (requerido)",
-      phone: "Teléfono (opcional)",
       errors: {
         quantity: "Ingresa una cantidad válida mayor a 0",
         name: "Ingresa tu nombre"
@@ -132,19 +124,14 @@ export const dictionaries: Record<Locale, Dict> = {
         cooked: "Cocido",
         fresh: "Crudo"
       },
-      sweetener: {
-        none: "Ninguno",
-        sugar: "Azúcar",
-        agave: "Agave",
-        piloncillo: "Piloncillo"
-      },
       packaging: {
-        "250g_glass": "250 g (vidrio)",
-        "330g_glass": "330 g (vidrio)",
-        "1l_glass": "1 L (vidrio)",
-        "1_5kg_bucket": "1.5 kg (cubeta)",
-        "5kg_bucket": "5 kg (cubeta)",
-        "20kg_drum": "20 kg (tambor)"
+        "250g_plastic": "250 g (botella plástico)",
+        "250g_glass": "250 g (botella vidrio)",
+        "450g_glass": "450 g (botella vidrio)",
+        "1_5kg_bag": "1.5 kg (bolsa)",
+        "3kg_bag": "3 kg (bolsa)",
+        "17kg_bucket": "17 kg (cubeta)",
+        "200kg_drum": "200 kg (tambo)"
       }
     },
     summary: {
@@ -153,7 +140,6 @@ export const dictionaries: Record<Locale, Dict> = {
       heat: "Picor",
       ingredients: "Ingredientes",
       preparation: "Preparación",
-      sweetener: "Endulzante",
       packaging: "Envase",
       quantity: "Cantidad"
     },
@@ -164,7 +150,6 @@ export const dictionaries: Record<Locale, Dict> = {
         heat: "• Picor",
         ingredients: "• Ingredientes",
         preparation: "• Preparación",
-        sweetener: "• Endulzante",
         packaging: "• Envase",
         quantity: "• Cantidad",
         name: "• Nombre",
@@ -186,14 +171,12 @@ export const dictionaries: Record<Locale, Dict> = {
       heat: "Adjust heat",
       ingredients: "Choose ingredients",
       preparation: "Choose preparation",
-      sweetener: "Choose sweetener",
       packaging: "Choose packaging",
       quantityContact: "Quantity and contact"
     },
     form: {
       quantity: "Quantity (units)",
       name: "Name (required)",
-      phone: "Phone (optional)",
       errors: {
         quantity: "Enter a valid quantity greater than 0",
         name: "Enter your name"
@@ -227,19 +210,14 @@ export const dictionaries: Record<Locale, Dict> = {
         cooked: "Cooked",
         fresh: "Fresh"
       },
-      sweetener: {
-        none: "None",
-        sugar: "Sugar",
-        agave: "Agave",
-        piloncillo: "Piloncillo"
-      },
       packaging: {
-        "250g_glass": "250 g (glass)",
-        "330g_glass": "330 g (glass)",
-        "1l_glass": "1 L (glass)",
-        "1_5kg_bucket": "1.5 kg (bucket)",
-        "5kg_bucket": "5 kg (bucket)",
-        "20kg_drum": "20 kg (drum)"
+        "250g_plastic": "250 g (plastic bottle)",
+        "250g_glass": "250 g (glass bottle)",
+        "450g_glass": "450 g (glass bottle)",
+        "1_5kg_bag": "1.5 kg (bag)",
+        "3kg_bag": "3 kg (bag)",
+        "17kg_bucket": "17 kg (bucket)",
+        "200kg_drum": "200 kg (drum)"
       }
     },
     summary: {
@@ -248,7 +226,6 @@ export const dictionaries: Record<Locale, Dict> = {
       heat: "Heat",
       ingredients: "Ingredients",
       preparation: "Preparation",
-      sweetener: "Sweetener",
       packaging: "Packaging",
       quantity: "Quantity"
     },
@@ -259,7 +236,6 @@ export const dictionaries: Record<Locale, Dict> = {
         heat: "• Heat",
         ingredients: "• Ingredients",
         preparation: "• Preparation",
-        sweetener: "• Sweetener",
         packaging: "• Packaging",
         quantity: "• Quantity",
         name: "• Name",
@@ -273,14 +249,14 @@ export const OptionKeyGroups = {
   chili: ["jalapeno", "serrano", "habanero", "poblano", "manzano"] as ChiliKey[],
   ingredients: ["onion", "tomato", "garlic", "cilantro", "spices"] as IngredientKey[],
   preparation: ["marinated", "charred", "cooked", "fresh"] as PreparationKey[],
-  sweetener: ["none", "sugar", "agave", "piloncillo"] as SweetenerKey[],
   packaging: [
+    "250g_plastic",
     "250g_glass",
-    "330g_glass",
-    "1l_glass",
-    "1_5kg_bucket",
-    "5kg_bucket",
-    "20kg_drum"
+    "450g_glass",
+    "1_5kg_bag",
+    "3kg_bag",
+    "17kg_bucket",
+    "200kg_drum"
   ] as PackagingKey[]
 };
 
