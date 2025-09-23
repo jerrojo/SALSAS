@@ -35,9 +35,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="es" className={`${inter.variable} ${playfair.variable}`}>
       <body className="min-h-screen flex flex-col">
         <header className="mx-auto w-full max-w-4xl px-4 py-6">
-          <div className="flex items-center gap-3">
-            <img src="/favicon.svg" alt="Grupo Arrabiato logo" className="h-8 w-8" />
-            <span className="font-display text-2xl">Grupo Arrabiato</span>
+          <div className="flex items-center justify-start">
+            <img src="/logo.png" alt="Grupo Arrabiato" className="h-10 md:h-12 w-auto" />
           </div>
         </header>
         <main className="flex-1 mx-auto w-full max-w-4xl px-4 pb-28 md:pb-8">{children}</main>
