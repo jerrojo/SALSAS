@@ -1,7 +1,7 @@
 "use client";
 
 type Props = {
-  value: number;
+  value: number | null;
   min?: number;
   max?: number;
   step?: number;
@@ -33,7 +33,7 @@ export default function Slider({
         min={min}
         max={max}
         step={step}
-        value={value}
+        value={typeof value === "number" ? value : (min ?? 1)}
         aria-label={ariaLabel}
         onChange={(e) => onChange(Number(e.target.value))}
         className="heat-slider -mt-6 w-full appearance-none bg-transparent accent-red [&::-webkit-slider-runnable-track]:h-3 [&::-webkit-slider-runnable-track]:rounded-full [&::-webkit-slider-thumb]:opacity-0 [&::-webkit-slider-thumb]:h-0 [&::-webkit-slider-thumb]:w-0 [&::-webkit-slider-thumb]:shadow-none [&::-webkit-slider-thumb]:border-0 focus:outline-none"
@@ -42,7 +42,7 @@ export default function Slider({
         <div className="flex justify-between text-[11px] font-medium text-gray-700 px-1">
           {Array.from({ length: 10 }, (_, i) => {
             const n = i + 1;
-            const active = n === value;
+            const active = typeof value === "number" && n === value;
             return (
               <button
                 key={n}

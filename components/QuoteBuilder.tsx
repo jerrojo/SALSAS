@@ -16,7 +16,7 @@ import { useRouter } from "next/navigation";
 
 const orderSchema = z.object({
   chili: z.enum(["jalapeno", "serrano", "habanero", "poblano", "manzano"]),
-  heat: z.number().min(0).max(10),
+  heat: z.number().min(1).max(10),
   ingredients: z.array(z.enum(["onion", "tomato", "garlic", "cilantro", "spices"])).optional(),
   preparation: z.enum(["marinated", "charred", "cooked", "fresh"]),
   packaging: z.enum(["250g_plastic", "250g_glass", "450g_glass", "1_5kg_bag", "3kg_bag", "17kg_bucket", "200kg_drum"]),
@@ -38,14 +38,14 @@ export default function QuoteBuilder({ locale }: { locale: Locale }) {
       return saved as unknown as FormValues;
     }
     return {
-      chili: "jalapeno",
-      heat: 5,
+      chili: undefined as any,
+      heat: undefined as any,
       ingredients: [],
-      preparation: "marinated",
-      packaging: "250g_plastic",
-      quantity: 1,
+      preparation: undefined as any,
+      packaging: undefined as any,
+      quantity: undefined as any,
       name: ""
-    };
+    } as unknown as FormValues;
   }, []);
 
   const {
@@ -121,7 +121,7 @@ export default function QuoteBuilder({ locale }: { locale: Locale }) {
               name="heat"
               render={({ field }) => (
                 <Slider
-                  value={field.value}
+                  value={field.value ?? null}
                   onChange={(v) => field.onChange(v)}
                   min={1}
                   max={10}

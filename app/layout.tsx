@@ -44,15 +44,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="mx-auto flex w-full max-w-4xl flex-col items-start gap-3 px-4 py-6 text-sm md:flex-row md:items-center md:justify-between">
             <div className="flex items-center gap-3">
               <a
-                href="https://wa.me/525538994836"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary"
-                aria-label="WhatsApp"
-              >
-                WhatsApp
-              </a>
-              <a
                 href="https://instagram.com/grupoarrabiato"
                 target="_blank"
                 rel="noopener noreferrer"
