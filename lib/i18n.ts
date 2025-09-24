@@ -103,8 +103,8 @@ export const dictionaries: Record<Locale, Dict> = {
       reset: "Reiniciar"
     },
     common: { na: "N/A" },
-    heatLabels: { 0: "Suave", 10: "Extremo" },
-    heatScale: ["Suave", "Medio", "Fuerte", "Muy fuerte", "Extremo"],
+    heatLabels: { 0: "Bajo", 10: "Extremo" },
+    heatScale: ["Bajo", "Medio", "Fuerte", "Muy fuerte", "Extremo"],
     options: {
       chili: {
         jalapeno: "Jalapeño",
