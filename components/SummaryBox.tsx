@@ -31,7 +31,7 @@ export default function SummaryBox({ order, locale, onReset }: Props) {
 
   return (
     <aside className="summary-sticky">
-      <div className="mx-auto max-w-4xl rounded-t-xl md:rounded-xl bg-white/90 backdrop-blur shadow-soft p-4 md:p-5">
+      <div className="mx-auto max-w-4xl rounded-t-xl md:rounded-xl bg-white/85 backdrop-blur shadow-soft p-4 md:p-5 border border-black/5">
         <div className="flex items-center justify-between">
           <h3 className="font-display text-lg">{dict.summary.title}</h3>
           <button className="text-red underline" onClick={onReset}>

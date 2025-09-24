@@ -40,6 +40,7 @@ type Dict = {
     na: string;
   };
   heatLabels: Record<0 | 10, string>;
+  heatScale: string[];
   options: {
     chili: Record<ChiliKey, string>;
     ingredients: Record<IngredientKey, string>;
@@ -103,6 +104,7 @@ export const dictionaries: Record<Locale, Dict> = {
     },
     common: { na: "N/A" },
     heatLabels: { 0: "Suave", 10: "Extremo" },
+    heatScale: ["Suave", "Medio", "Fuerte", "Muy fuerte", "Extremo"],
     options: {
       chili: {
         jalapeno: "Jalapeño",
@@ -189,6 +191,7 @@ export const dictionaries: Record<Locale, Dict> = {
     },
     common: { na: "N/A" },
     heatLabels: { 0: "Mild", 10: "Extra hot" },
+    heatScale: ["Mild", "Medium", "Hot", "Super Hot", "Extremely Hot"],
     options: {
       chili: {
         jalapeno: "Jalapeño",

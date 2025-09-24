@@ -36,7 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-screen flex flex-col">
         <header className="mx-auto w-full max-w-4xl px-4 py-6 border-b border-black/5">
           <div className="flex items-center justify-start">
-            <img src="/logo.png" alt="Grupo Arrabiato" className="h-10 md:h-12 w-auto" />
+            <img src="/logo.png" alt="Grupo Arrabiato" className="h-8 md:h-12 w-auto" />
           </div>
         </header>
         <main className="flex-1 mx-auto w-full max-w-4xl px-4 pb-28 md:pb-8">{children}</main>
