@@ -51,10 +51,8 @@ export default function Slider({
                 aria-current={active ? "true" : undefined}
                 onClick={() => onChange(n)}
                 className={
-                  "h-6 w-6 rounded-full flex items-center justify-center transition-colors " +
-                  (active
-                    ? "bg-red text-white shadow"
-                    : "hover:bg-black/5 text-gray-800")
+                  "h-6 w-6 flex items-center justify-center transition-colors " +
+                  (active ? "text-red font-semibold" : "hover:text-red/70 text-gray-800")
                 }
               >
                 {n}
