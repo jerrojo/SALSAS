@@ -39,7 +39,7 @@ type Dict = {
   common: {
     na: string;
   };
-  heatLabels: Record<0 | 10, string>;
+  heatLabels: Record<1 | 10, string>;
   heatScale: string[];
   options: {
     chili: Record<ChiliKey, string>;
@@ -103,7 +103,7 @@ export const dictionaries: Record<Locale, Dict> = {
       reset: "Reiniciar"
     },
     common: { na: "N/A" },
-    heatLabels: { 0: "Bajo", 10: "Extremo" },
+    heatLabels: { 1: "Bajo", 10: "Extremo" },
     heatScale: ["Bajo", "Medio", "Fuerte", "Muy fuerte", "Extremo"],
     options: {
       chili: {
@@ -190,7 +190,7 @@ export const dictionaries: Record<Locale, Dict> = {
       reset: "Reset"
     },
     common: { na: "N/A" },
-    heatLabels: { 0: "Mild", 10: "Extra hot" },
+    heatLabels: { 1: "Mild", 10: "Extra hot" },
     heatScale: ["Mild", "Medium", "Hot", "Super Hot", "Extremely Hot"],
     options: {
       chili: {

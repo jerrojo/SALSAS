@@ -123,9 +123,9 @@ export default function QuoteBuilder({ locale }: { locale: Locale }) {
                 <Slider
                   value={field.value}
                   onChange={(v) => field.onChange(v)}
-                  min={0}
+                  min={1}
                   max={10}
-                  labels={{ 0: dict.heatLabels[0], 10: dict.heatLabels[10] }}
+                  labels={{ 1: dict.heatLabels[1], 10: dict.heatLabels[10] }}
                   ariaLabel={dict.steps.heat}
                 />
               )}
