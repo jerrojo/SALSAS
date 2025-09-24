@@ -38,9 +38,8 @@ export default function Slider({
         onChange={(e) => onChange(Number(e.target.value))}
         className="-mt-5 w-full appearance-none bg-transparent accent-red [&::-webkit-slider-runnable-track]:h-5 [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:shadow [&::-webkit-slider-thumb]:border [&::-webkit-slider-thumb]:border-red"
       />
-      <div className="mt-2 grid grid-cols-12 text-[11px] font-medium text-gray-700 select-none">
-        <div className="col-span-2 text-left">{labels?.[1] ?? ""}</div>
-        <div className="col-span-8 flex justify-between px-1">
+      <div className="mt-2 select-none">
+        <div className="flex justify-between text-[11px] font-medium text-gray-700 px-1">
           {Array.from({ length: 10 }, (_, i) => {
             const n = i + 1;
             const active = n === value;
@@ -63,7 +62,10 @@ export default function Slider({
             );
           })}
         </div>
-        <div className="col-span-2 text-right">{labels?.[10] ?? ""}</div>
+        <div className="mt-1 flex justify-between text-[12px] text-gray-700">
+          <span>{labels?.[1] ?? ""}</span>
+          <span>{labels?.[10] ?? ""}</span>
+        </div>
       </div>
     </div>
   );
