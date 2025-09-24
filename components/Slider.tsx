@@ -36,7 +36,7 @@ export default function Slider({
         value={value}
         aria-label={ariaLabel}
         onChange={(e) => onChange(Number(e.target.value))}
-        className="-mt-6 w-full appearance-none bg-transparent accent-red [&::-webkit-slider-runnable-track]:h-3 [&::-webkit-slider-runnable-track]:rounded-full [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:border [&::-webkit-slider-thumb]:border-white [&::-webkit-slider-thumb]:shadow-md [&::-webkit-slider-thumb]:ring-1 [&::-webkit-slider-thumb]:ring-black/10 [&::-webkit-slider-thumb:hover]:ring-2 [&::-webkit-slider-thumb:hover]:ring-red/40 focus:outline-none"
+        className="heat-slider -mt-6 w-full appearance-none bg-transparent accent-red [&::-webkit-slider-runnable-track]:h-3 [&::-webkit-slider-runnable-track]:rounded-full [&::-webkit-slider-thumb]:opacity-0 [&::-webkit-slider-thumb]:h-0 [&::-webkit-slider-thumb]:w-0 [&::-webkit-slider-thumb]:shadow-none [&::-webkit-slider-thumb]:border-0 focus:outline-none"
       />
       <div className="mt-2 select-none">
         <div className="flex justify-between text-[11px] font-medium text-gray-700 px-1">
@@ -51,8 +51,10 @@ export default function Slider({
                 aria-current={active ? "true" : undefined}
                 onClick={() => onChange(n)}
                 className={
-                  "h-6 w-6 flex items-center justify-center transition-colors " +
-                  (active ? "text-red font-semibold" : "hover:text-red/70 text-gray-800")
+                  "h-6 w-6 rounded-full flex items-center justify-center transition-colors " +
+                  (active
+                    ? "bg-red text-white shadow"
+                    : "hover:bg-black/5 text-gray-800")
                 }
               >
                 {n}
@@ -65,6 +67,11 @@ export default function Slider({
           <span>{labels?.[10] ?? ""}</span>
         </div>
       </div>
+      <style jsx global>{`
+        /* Hide Firefox range thumb (we use numeric markers instead) */
+        input.heat-slider::-moz-range-thumb { opacity: 0; border: none; height: 0; width: 0; }
+        input.heat-slider::-ms-thumb { opacity: 0; border: none; height: 0; width: 0; }
+      `}</style>
     </div>
   );
 }
