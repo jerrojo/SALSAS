@@ -36,7 +36,7 @@ export default function Slider({
         value={value}
         aria-label={ariaLabel}
         onChange={(e) => onChange(Number(e.target.value))}
-        className="-mt-6 w-full appearance-none bg-transparent accent-red [&::-webkit-slider-runnable-track]:h-3 [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:shadow [&::-webkit-slider-thumb]:border [&::-webkit-slider-thumb]:border-red"
+        className="-mt-7 w-full appearance-none bg-transparent accent-red [&::-webkit-slider-runnable-track]:h-3 [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:shadow [&::-webkit-slider-thumb]:border [&::-webkit-slider-thumb]:border-red"
       />
       <div className="mt-2 select-none">
         <div className="flex justify-between text-[11px] font-medium text-gray-700 px-1">
