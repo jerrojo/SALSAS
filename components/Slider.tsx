@@ -36,7 +36,7 @@ export default function Slider({
         value={value}
         aria-label={ariaLabel}
         onChange={(e) => onChange(Number(e.target.value))}
-        className="-mt-7 w-full appearance-none bg-transparent accent-red [&::-webkit-slider-runnable-track]:h-3 [&::-webkit-slider-runnable-track]:rounded-full [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:border [&::-webkit-slider-thumb]:border-white [&::-webkit-slider-thumb]:shadow-md [&::-webkit-slider-thumb]:ring-1 [&::-webkit-slider-thumb]:ring-black/10"
+        className="-mt-6 w-full appearance-none bg-transparent accent-red [&::-webkit-slider-runnable-track]:h-3 [&::-webkit-slider-runnable-track]:rounded-full [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:border [&::-webkit-slider-thumb]:border-white [&::-webkit-slider-thumb]:shadow-md [&::-webkit-slider-thumb]:ring-1 [&::-webkit-slider-thumb]:ring-black/10 [&::-webkit-slider-thumb:hover]:ring-2 [&::-webkit-slider-thumb:hover]:ring-red/40 focus:outline-none"
       />
       <div className="mt-2 select-none">
         <div className="flex justify-between text-[11px] font-medium text-gray-700 px-1">
